@@ -1,0 +1,12 @@
+//Display students marks and gender using structure
+
+#include <stdio.h>
+struct students{
+   float marks;
+   char gender;
+};
+
+struct students s[5];
+int main(){
+    
+}
