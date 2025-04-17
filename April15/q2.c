@@ -3,6 +3,7 @@
 #include <stdio.h>
 int opt;
 struct students{
+    char name[30];
     float marks;
     char gender[30];
 };
@@ -10,11 +11,14 @@ struct students{
 struct students s[2];
 int main(){
     for (int i = 0; i < 2; i++){
+        printf("Enter the name of student%d: ", i + 1);
+        scanf(" %[^\n]",s[i].name);
+
         printf("Enter the marks of student%d: ", i + 1);
         scanf("%f",&s[i].marks);
-        
+
         printf("Enter the gender of student%d: ", i + 1);
-        scanf(" %c",&s[i].gender);
+        scanf(" %[^\n]",s[i].gender);
 
         printf("\n");
     }
@@ -26,5 +30,5 @@ int main(){
 
     //Display details
     printf("\n--------DETAILS---------\n");
-    printf("Marks: %f\nGender: %s",s[opt].marks,s[opt].gender);
+    printf("Name: %s\nMarks: %f\nGender: %s",s[opt-1].name,s[opt-1].marks,s[opt-1].gender);
 }
